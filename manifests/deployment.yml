@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: henryzhanpipelinestestazuredevops 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: henryzhanpipelinestestazuredevops
+  template:
+    metadata:
+      labels:
+        app: henryzhanpipelinestestazuredevops 
+    spec:
+      containers:
+        - name: henryzhanpipelinestestazuredevops 
+          image: henrycontainerregistry.azurecr.io/henryzhanpipelinestestazuredevops
+          ports:
+          - containerPort: 8080
