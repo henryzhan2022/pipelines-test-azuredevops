@@ -81,7 +81,6 @@ stages:
                 $(containerRegistry)/$(imageRepository):$(tag)
 
   - deployment: DeployPullRequest
-    dependsOn: Deploy
     displayName: Deploy Pull request
     condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/pull/'))
     pool:
